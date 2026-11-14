@@ -1,0 +1,16 @@
+{
+  "name": "列印即玩桌遊產生器",
+  "short_name": "列印桌遊",
+  "description": "課程題材變成可以列印、剪下就能玩的卡牌、骰子、賓果卡與規則說明",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1F5640",
+  "theme_color": "#1F5640",
+  "lang": "zh-TW",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
