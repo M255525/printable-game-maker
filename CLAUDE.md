@@ -5,7 +5,7 @@
 2026-11-14 建立。使用者從「跨距大的工具方向」清單選了 #6。
 
 - 純靜態：`index.html`（CSS，綠色切割墊＋白紙＋橘色紙膠帶風格）＋`data.js`（6 個內建題材包、遊戲機制、出卡、規則文字、文字／JSON 匯入；node 可 require）＋`app.js`（畫面、預覽、AI）＋`manual.html`＋PWA。
-- 本機預覽 port **8880**（`.claude/launch.json` 的 `printable-game-maker`）。visitor-badge `m255525.printablegamemaker`。線上網址預定 <https://m255525.github.io/printable-game-maker/>（`ONLINE`，印在規則頁頁尾）。**尚未上線**：repo 由使用者自己 `gh repo create`，上線前先問過。
+- 本機預覽 port **8880**（`.claude/launch.json` 的 `printable-game-maker`）。visitor-badge `m255525.printablegamemaker`。線上網址預定 <https://m255525.github.io/printable-game-maker/>（`ONLINE`，印在規則頁頁尾）。**2026-11-14 已上線**（repo 由使用者自己 `gh repo create`；push 時 Pages 還沒開，第一次部署失敗，開 Pages 後 `gh run rerun` 成功）。程式牆在 `REPO_META`，github-dashboard 已補。
 
 ## 引擎（data.js）
 - 題材格式 `{name, ic, sub, qmode:'cat'|'def', cats:[{n,ic}], items:[{c,t,d,q,a}], steps:{title, list}}`，一律經 `normPack()`（截長度：名詞 24、說明 60、題目 70；類別最多 9、名詞最多 200、步驟最多 20；去控制字元）。內建題材內容是自行撰寫的教學示範，開店流程刻意不寫法規數字。
@@ -25,7 +25,7 @@
 - 測試掛鉤 `window._pgm`（S、ACT、layout、importAnswer）。
 
 ## 驗證
-- `python tools/e2e_print.py <資料夾>`（需先開 8880）：6 題材全開六遊戲＋卡背的頁數（42～52 頁）、卡片文字不溢出、三種卡牌實際尺寸 mm 與 A4 紙張尺寸、卡背頁接在卡牌頁後、`page.pdf()` 頁數＝預覽頁數、貼表格、匯入 AI JSON（含 ```json 圍欄）、存我的題材、375px 無橫向溢出。2026-11-14 全過、無 console 錯誤。PDF 用 PyMuPDF（fitz）轉圖逐頁目視過。
+- `python tools/e2e_print.py <資料夾>`（需先開 8880）：6 題材全開六遊戲＋卡背的頁數（42～52 頁）、卡片文字不溢出、三種卡牌實際尺寸 mm 與 A4 紙張尺寸、卡背頁接在卡牌頁後、`page.pdf()` 頁數＝預覽頁數、貼表格、匯入 AI JSON（含 ```json 圍欄）、存我的題材、375px 無橫向溢出。2026-11-14 本機與線上版（`PGM_BASE=https://m255525.github.io/printable-game-maker/`）都全過、無 console 錯誤。PDF 用 PyMuPDF（fitz）轉圖逐頁目視過。
 - **實體印表機、雙面對齊、卡紙未實測**。
 
 ## 標準配備
